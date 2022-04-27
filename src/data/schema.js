@@ -41,8 +41,11 @@ import { resolvers } from './resolvers';
 
     type Mutation {
         createPhone(input: PhoneInput): Phone
+        updatePhone(input: PhoneInput): Phone
+        deletePhone(id: ID!): String
     }
 `
+
 
 const schema = makeExecutableSchema({ typeDefs ,resolvers});
 

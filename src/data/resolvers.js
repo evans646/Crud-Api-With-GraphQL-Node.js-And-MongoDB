@@ -32,20 +32,20 @@ export const resolvers = {
                 })
             })
         },
-        updateFriend: (root, { input }) => {
+        updatePhone: (root, { input }) => {
             return new Promise((resolve, object)=>{
                 //get the id from graphQL pass it to mongo to update a friend in the db 
-                Friends.findByIdAndUpdate({_id:input.id},input,{new:true},(err,friend)=>{
+                Phones.findByIdAndUpdate({_id:input.id},input,{new:true},(err,phone)=>{
                     if(err) console.log(err)
-                    else resolve(friend)
+                    else resolve(phone)
                 })
             })
         },
-        deleteFriend: (root, { id }) => {
+        deletePhone: (root, { id }) => {
             return new Promise(( resolve, object) => {
-                Friends.remove({ _id: id }, (err) => {
+                Phones.remove({ _id: id }, (err) => {
                     if (err) reject(err)
-                    else resolve('Successfully deleted friend')
+                    else resolve('Successfully deleted phone from database')
                 })
             })
         }
