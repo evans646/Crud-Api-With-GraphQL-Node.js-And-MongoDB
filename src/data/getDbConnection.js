@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 
 //db url, so we can connect to mongo atlas 
-const dbUrl = 'mongodb+srv://gqlcrudapi:5JSYU7V0N03USMhP@cluster0.ljm9b.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
+const dbUrl = 'mongo db connection string here'
 
 mongoose.connect(dbUrl, {
     useNewUrlParser: true,

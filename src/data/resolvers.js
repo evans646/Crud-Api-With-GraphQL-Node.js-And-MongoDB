@@ -12,7 +12,7 @@ export const resolvers = {
             })
         },
     },
-    //mutaion to handle create,update and delete 
+    //mutaion to handle create,update and delete requests
     Mutation: {
         createPhone: (root, { input }) => {
             const newPhone = new Phones({
@@ -24,7 +24,6 @@ export const resolvers = {
             });
 
             newPhone.id = newPhone._id;
-
             return new Promise((resolve, object) => {
                 newPhone.save((err) => {
                     if (err) reject(err)
