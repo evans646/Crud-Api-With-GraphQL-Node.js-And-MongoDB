@@ -2,17 +2,17 @@ import {Phones} from './getDBConnection';
 
 // resolver map
 export const resolvers = { 
-       Query: {
-        getOnePhone: (root, { id }) => {
-            return new Promise(( resolve, object) => {
-                Phones.findById(id, (err, phone) => {
-                    if (err) reject(err)
-                    else resolve(phone)
-                })
-            })
-        },
-    },
-    //mutaion to handle create,update and delete requests
+    //    Query: {
+    //     getOnePhone: (root, { id }) => {
+    //         return new Promise(( resolve, object) => {
+    //             Phones.findById(id, (err, phone) => {
+    //                 if (err) reject(err)
+    //                 else resolve(phone)
+    //             })
+    //         })
+    //     },
+    // },
+//mutaion to handle create,update and delete requests
     Mutation: {
         createPhone: (root, { input }) => {
             const newPhone = new Phones({
@@ -50,3 +50,7 @@ export const resolvers = {
         }
     },
 };
+
+
+
+   

@@ -1,7 +1,7 @@
 import mongoose from 'mongoose';
 
 //db url, so we can connect to mongo atlas 
-const dbUrl = 'mongo db connection string here'
+const dbUrl = 'mongodb+srv://newuser:AWRghOzUdZqRK25z@cluster0.7gvuv.mongodb.net/myFirstDatabase?retryWrites=true&w=majority';
 
 mongoose.connect(dbUrl, {
     useNewUrlParser: true,
@@ -19,6 +19,7 @@ const phoneSchema = new mongoose.Schema({
         type: Array
     },
     brand: {
+        type:String,
         enum : [  "Samsung",
         "Nokia",
         "Apple",
@@ -36,7 +37,6 @@ const phoneSchema = new mongoose.Schema({
 });
 
 const Phones = mongoose.model('phones', phoneSchema);
-
 
 export { Phones };
 
